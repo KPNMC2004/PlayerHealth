@@ -1,13 +1,18 @@
+import Enemy.*;
+
 import java.util.Scanner;
+import Enemy.*;
 
 public class Player {
-    final int MAX_HEALTH;
+    PlayerHealth playerHealth = new PlayerHealth();
+    PlayerMana playerMana = new PlayerMana();
+    String name = "Joe";
 
-    PlayerHealth health = new PlayerHealth(MAX_HEALTH);
-
-    public static void attackEnemy(Enemy enemy, ) {
-
+    public static void attackEnemy(Enemy enemy, Weapon weapon) {
+        enemy.
     }
+
+
 
     public void playerChoice() {
         Scanner playerInput = new Scanner(System.in);
@@ -24,7 +29,7 @@ public class Player {
                     this.switchWeapons();
                     break;
                 case 3:
-                    this.useMagic();
+                    this.useSpell();
                     break;
                 case 4:
                     System.out.println("You skipped a turn!");
@@ -37,7 +42,8 @@ public class Player {
     }
 
 
-    public Player() {
+    public Player(double playerHealth, String playerName, String playerWeapon ) {
+
 
 
     }
