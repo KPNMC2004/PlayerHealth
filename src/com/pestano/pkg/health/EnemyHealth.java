@@ -1,34 +1,31 @@
-package Enemy;
+package com.pestano.pkg.health;
 
-public class EnemyHealth {
+public class EnemyHealth extends Health {
 
     // Constants
     final double LIFE_COST = 0.02;
-    double health = 100;
-    public double getHealth() {
-        return health;
-    }
+
 
     // When Hitted
     public void calculateHitPoints(double weaponDmg, double spellDmg) {
-        double totalHealth = this.health;
+        double totalHealth = this.getHealthPoints();
 
         totalHealth = (weaponDmg + spellDmg + (this.LIFE_COST * totalHealth) ) - totalHealth;
 
-        this.health = totalHealth;
+        this.setHealthPoints(totalHealth);
     }
 
     public void calculateHitPoints(double weaponDmg) {
-        double totalHealth = this.health;
+        double totalHealth = this.getHealthPoints();
 
         totalHealth = (weaponDmg + (this.LIFE_COST * totalHealth) ) - totalHealth;
 
-        this.health = totalHealth;
+        this.setHealthPoints(totalHealth);
     }
 
     // Health Regen
     public void calculateRegeneration(int healthGained) {
-        this.health += healthGained;
+
     }
 
 
@@ -38,6 +35,7 @@ public class EnemyHealth {
 
     // Keep default health when no args
     public EnemyHealth() {
+        this.health = DEFAULT_HEALTH;
     }
 
 

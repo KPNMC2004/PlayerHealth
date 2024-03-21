@@ -1,3 +1,5 @@
+package com.pestano.pkg;
+
 public class Spell {
 
     int spellNum = 0;

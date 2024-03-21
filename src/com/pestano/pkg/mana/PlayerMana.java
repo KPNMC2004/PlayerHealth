@@ -1,4 +1,14 @@
+package com.pestano.pkg.mana;
+
 public class PlayerMana {
+    public double getManaQty() {
+        return manaQty;
+    }
+
+    public void setManaQty(double manaQty) {
+        this.manaQty = manaQty;
+    }
+
     public double manaQty;
 
     public void useMana(double manaUsed) {
@@ -9,13 +19,7 @@ public class PlayerMana {
         manaQty += manaUsed;
     }
 
-    public double getManaQty() {
-        return manaQty;
-    }
 
-    public PlayerMana(double qty) {
-        this.manaQty = qty;
-    }
 
     public PlayerMana() {
         this.manaQty = 1000;
