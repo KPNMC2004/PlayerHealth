@@ -9,6 +9,22 @@ public abstract class Health {
         this.healthPoints = healthPoints;
     }
 
+
+    public void calculateHitPoints(double weaponDmg) {
+        double totalHealth = getHealthPoints();
+
+        totalHealth -= weaponDmg;
+
+        setHealthPoints(totalHealth);
+    }
+    public void calculateHitPoints(double weaponDmg, double spellDmg) {
+        double totalHealth = getHealthPoints();
+
+        totalHealth -= (weaponDmg + spellDmg);
+
+        setHealthPoints(totalHealth);
+    }
+
     // Default
     private double healthPoints = 2000;
 

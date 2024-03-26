@@ -2,9 +2,10 @@ package com.pestano.pkg.entities;
 
 //import com.pestano.pkg.mana.PlayerMana;
 
+import com.pestano.data.WeaponList;
 import com.pestano.pkg.Entity;
-import com.pestano.pkg.Spell;
 import com.pestano.pkg.Weapon;
+import com.pestano.pkg.Spell;
 import com.pestano.pkg.health.PlayerHealth;
 
 public class Player extends Entity {
@@ -20,16 +21,13 @@ public class Player extends Entity {
 
 
     public Player(String playerName, double HealthPoints, Weapon weapon) {
-        super.name = playerName;
-        super.weapon = weapon;
+        super.setName(playerName);
+        super.setWeapon(weapon);
         this.health.setHealthPoints(HealthPoints);
     }
 
     public Player(Weapon weapon) {
-        this.weapon = weapon;
-    }
-
-    public Player() {
+        this.setWeapon(weapon);
     }
 
 }

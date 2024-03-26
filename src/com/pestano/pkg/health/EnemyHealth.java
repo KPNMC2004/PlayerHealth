@@ -9,21 +9,21 @@ public class EnemyHealth extends Health {
 
 
     // When Hitted
-    public void calculateHitPoints(double weaponDmg, double spellDmg) {
-        double totalHealth = this.getHealthPoints();
-
-        totalHealth = (weaponDmg + spellDmg + (this.LIFE_COST * totalHealth) ) - totalHealth;
-
-        super.setHealthPoints(totalHealth);
-    }
-
-    public void calculateHitPoints(double weaponDmg) {
-        double totalHealth = this.getHealthPoints();
-
-        totalHealth = (weaponDmg + (this.LIFE_COST * totalHealth) ) - totalHealth;
-
-        this.setHealthPoints(totalHealth);
-    }
+//    public void calculateHitPoints(double weaponDmg, double spellDmg) {
+//        double totalHealth = this.getHealthPoints();
+//
+//        totalHealth = (weaponDmg + spellDmg + (this.LIFE_COST * totalHealth) ) - totalHealth;
+//
+//        super.setHealthPoints(totalHealth);
+//    }
+//
+//    public void calculateHitPoints(double weaponDmg) {
+//        double totalHealth = this.getHealthPoints();
+//
+//        totalHealth = (weaponDmg + (this.LIFE_COST * totalHealth) ) - totalHealth;
+//
+//        this.setHealthPoints(totalHealth);
+//    }
 
     public EnemyHealth(double health) {
         this.setHealthPoints(health);

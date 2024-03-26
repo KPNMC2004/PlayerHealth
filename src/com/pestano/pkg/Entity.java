@@ -1,5 +1,7 @@
 package com.pestano.pkg;
 
+import com.pestano.data.WeaponList;
+
 public abstract class Entity {
     public String getName() {
         return name;
@@ -17,7 +19,10 @@ public abstract class Entity {
         this.weapon = weapon;
     }
 
-    public String name = "Joe";
-    public Weapon  weapon = null;
-
+    private String name = "Joe";
+    private Weapon weapon = null;
+    @Override
+    public String toString() {
+        return this.name;
+    }
 }

@@ -14,7 +14,7 @@ public class Enemy extends Entity {
         super.setWeapon(weapon);
     }
     public void attack(Player player) {
-        player.health.calculateHitPoints(this.weapon.weaponDamage);
+        player.health.calculateHitPoints(super.getWeapon().getWeaponDamage());
     }
 
 }

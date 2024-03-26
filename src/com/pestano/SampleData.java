@@ -25,7 +25,7 @@ public class SampleData {
 
     public SampleData() {
         weaponList = new Weapon[] {
-                new Weapon("test1", 5),
+                new Weapon("test1", 500),
                 new Weapon("test2", 2),
                 new Weapon("test3", 3)
         };
