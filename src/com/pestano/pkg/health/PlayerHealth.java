@@ -6,24 +6,23 @@ public class PlayerHealth extends Health {
 
     // Constants
     final double LIFE_COST = 0.02;
-    protected double maxHealth;
 
     // When Hitted
-//    public void calculateHitPoints(double weaponDmg, double spellDmg) {
-//        double totalHealth = super.getHealthPoints();
-//
-//        totalHealth = (weaponDmg + spellDmg + (LIFE_COST * totalHealth) ) - totalHealth;
-//
-//        super.setHealthPoints(totalHealth);
-//    }
-//
-//    public void calculateHitPoints(double weaponDmg) {
-//        double totalHealth = super.getHealthPoints();
-//
-//        totalHealth = (weaponDmg + (LIFE_COST * totalHealth) ) - totalHealth;
-//
-//        this.setHealthPoints(totalHealth);
-//    }
+    public void calculateHitPoints(double weaponDmg, double spellDmg) {
+        double totalHealth = super.getHealthPoints();
+
+        totalHealth = (weaponDmg + spellDmg + (LIFE_COST * totalHealth) ) - totalHealth;
+
+        super.setHealthPoints(totalHealth);
+    }
+
+    public void calculateHitPoints(double weaponDmg) {
+        double totalHealth = super.getHealthPoints();
+
+        totalHealth = (weaponDmg + (LIFE_COST * totalHealth) ) - totalHealth;
+
+        this.setHealthPoints(totalHealth);
+    }
 
     // Health Regen
     public void calculateRegeneration(int healthGained) {

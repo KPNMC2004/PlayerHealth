@@ -1,7 +1,5 @@
 package com.pestano.pkg;
 
-import java.util.Locale;
-
 public class Weapon {
 
     public String getId() {

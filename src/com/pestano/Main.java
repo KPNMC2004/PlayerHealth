@@ -2,10 +2,9 @@ package com.pestano;
 
 import com.pestano.data.EnemyList;
 import com.pestano.data.WeaponList;
+import com.pestano.pkg.Weapon;
 import com.pestano.pkg.entities.Enemy;
 import com.pestano.pkg.entities.Player;
-import com.pestano.pkg.Weapon;
-
 
 import java.util.HashMap;
 import java.util.Random;
@@ -47,7 +46,7 @@ public class Main {
             switch (playerChoice) {
                 case 1:
                     player.attack(enemy);
-                    System.out.printf("%s lost %fHP!\n", enemy.getName(), enemy.getWeapon().getWeaponDamage());
+                    System.out.printf("%s lost %.2fHP!\n", enemy.getName(), enemy.getWeapon().getWeaponDamage());
                     break;
                 case 2:
                     Weapon prevousWeapon = player.getWeapon();
@@ -78,7 +77,7 @@ public class Main {
         do {
             weaponList.printWeapons();
             System.out.print(">> ");
-            choice = input.nextLine();
+            choice = input.nextLine().substring(0,3).toUpperCase();
 
         } while (!weaponMap.containsKey(choice));
 
@@ -92,6 +91,7 @@ public class Main {
 
         // Create instances
         WeaponList weaponsList = new  WeaponList();
+        EnemyList enemyList = new EnemyList();
         Random random = new Random();
 
         // Set variables
@@ -99,7 +99,7 @@ public class Main {
 
 
             // ask for player name
-        System.out.print("Enter you name >> ");
+        System.out.print("\n\nEnter you name >> ");
         playerName = input.nextLine();
 
         System.out.printf("Your name is : %s\n", playerName);
@@ -113,26 +113,34 @@ public class Main {
         Player player = new Player(playerName, 2000, playerWeapon);
 
         // random enemy encounter
-        Enemy enemy = EnemyList.getEnemyTypes().get(random.nextInt(EnemyList.getEnemyTypes().size()));
+        Enemy enemy = enemyList.getEnemyTypes().get(random.nextInt(enemyList.getEnemyTypes().size()));
         System.out.printf("A random %s as appeared!\n", enemy.getName());
 
         final double maxPlayerHealth = player.health.getHealthPoints();
         final double maxEnemyHealth = enemy.health.getHealthPoints();
 
 
-
+        System.out.flush();
         boolean isRunning = true;
         while (isRunning) {
             // player anim (weapon dependant)
 
-            System.out.printf("%s: %.0f / %.0f\n",player.getName(),player.health.getHealthPoints(),maxPlayerHealth);
-            System.out.printf("\tPrimary Weapon: %s", player.getWeapon().getName());
-            System.out.printf("\tSecondary Weapon: %s", player.getWeapon().getName());
-
+            // Draw Entity Names
             System.out.print("\n");
+            System.out.printf("%-16s",player.getName());
+            System.out.printf("%32s",enemy.getName());
 
-            System.out.printf("%s: %.0f / %.0f\n\n",enemy.getName(),enemy.health.getHealthPoints(), maxEnemyHealth);
-            System.out.printf("Weapon: %s", enemy.getWeapon().getName());
+            // Draw Health Info
+            System.out.print("\n");
+            System.out.printf("%4.2f / %4.2f",player.health.getHealthPoints(),maxPlayerHealth);
+            System.out.printf("%21.2f / %4.2f",enemy.health.getHealthPoints(), maxEnemyHealth);
+
+            // Draw Weapon info
+            System.out.print("\n");
+            System.out.printf("\tPrimary Weapon: %-8s", player.getWeapon().getName());
+            System.out.printf("%8s :Weapon", enemy.getWeapon().getName());
+            System.out.printf("\n\tSecondary Weapon: %-8s", player.getWeapon().getName());
+
 
 
             // player action
@@ -153,7 +161,7 @@ public class Main {
 
                 // enemy attack
                 enemy.attack(player);
-                System.out.printf("%s lost %fHP!\n", player.getName(), enemy.getWeapon().getWeaponDamage());
+                System.out.printf("%s lost %.2fHP!\n", player.getName(), enemy.getWeapon().getWeaponDamage());
 
             }
 

@@ -3,13 +3,12 @@ package com.pestano.data;
 import com.pestano.pkg.Weapon;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 
 public class WeaponList {
-    private ArrayList<Weapon> weapons = new ArrayList<>();
+    private final ArrayList<Weapon> weapons = new ArrayList<>();
 
-    private LinkedHashMap<String, Weapon> weaponsMap = new LinkedHashMap<>();
+    private final LinkedHashMap<String, Weapon> weaponsMap = new LinkedHashMap<>();
 
     public LinkedHashMap<String, Weapon> getWeaponsMap() {
         return weaponsMap;
@@ -39,12 +38,12 @@ public class WeaponList {
         weapons.add(new Weapon("Axe", 20));
         weapons.add(new Weapon("Mace", 12));
         weapons.add(new Weapon("Bow", 8));
-        weapons.add(new Weapon("LBW","Long Bow", 8));
+        weapons.add(new Weapon("Long Bow", 8));
 
 
 
         createMap();
-        weapons = null;
+        weapons.clear();
     }
 
 }

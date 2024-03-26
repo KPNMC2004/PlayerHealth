@@ -1,7 +1,5 @@
 package com.pestano.pkg;
 
-import com.pestano.data.WeaponList;
-
 public abstract class Entity {
     public String getName() {
         return name;

@@ -2,10 +2,9 @@ package com.pestano.pkg.entities;
 
 //import com.pestano.pkg.mana.PlayerMana;
 
-import com.pestano.data.WeaponList;
 import com.pestano.pkg.Entity;
-import com.pestano.pkg.Weapon;
 import com.pestano.pkg.Spell;
+import com.pestano.pkg.Weapon;
 import com.pestano.pkg.health.PlayerHealth;
 
 public class Player extends Entity {
