@@ -1,6 +1,7 @@
 package com.pestano;
 
 import com.pestano.data.EnemyList;
+import com.pestano.data.PlayerClass;
 import com.pestano.data.WeaponList;
 import com.pestano.pkg.Weapon;
 import com.pestano.pkg.entities.Enemy;
@@ -68,22 +69,25 @@ public class Main {
         }
     }
 
-    public static Weapon pickWeapon(WeaponList weaponList) {
-        Scanner input = new Scanner(System.in);
-        HashMap<String, Weapon> weaponMap = weaponList.getWeaponsMap();
+//    public static Weapon pickWeapon(WeaponList weaponList) {
+//        Scanner input = new Scanner(System.in);
+//        HashMap<String, Weapon> weaponMap = weaponList.getWeaponsMap();
+//
+//        String choice;
+//
+//        do {
+//            weaponList.printWeapons();
+//            System.out.print(">> ");
+//            choice = input.nextLine().substring(0,3).toUpperCase();
+//
+//        } while (!weaponMap.containsKey(choice));
+//
+//        return weaponMap.get(choice);
+//    }
 
-        String choice;
+    public static void ClassSelector(PlayerClass playerClasses) {
 
-        do {
-            weaponList.printWeapons();
-            System.out.print(">> ");
-            choice = input.nextLine().substring(0,3).toUpperCase();
-
-        } while (!weaponMap.containsKey(choice));
-
-        return weaponMap.get(choice);
     }
-
 
 
     public static void main(String[] args) {

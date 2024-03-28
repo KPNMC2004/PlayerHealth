@@ -6,11 +6,11 @@ import com.pestano.pkg.Entity;
 import com.pestano.pkg.Spell;
 import com.pestano.pkg.Weapon;
 import com.pestano.pkg.health.PlayerHealth;
+import com.pestano.pkg.mana.PlayerMana;
 
 public class Player extends Entity {
     public PlayerHealth health = new PlayerHealth();
-    //public PlayerMana playerMana = new PlayerMana();
-    public Spell playerSpell;
+
     private Enemy target;
 
     public void attack(Enemy enemy) {
