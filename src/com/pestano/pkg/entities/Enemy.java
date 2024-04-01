@@ -7,18 +7,24 @@ import com.pestano.pkg.health.EnemyHealth;
 
 public class Enemy extends Entity {
     final String enemyDefaultName = "Superuser";
-    public EnemyHealth health = new EnemyHealth();
+    private final EnemyHealth health = new EnemyHealth();
+
+    public EnemyHealth getHealth() {
+        return health;
+    }
+
+    public void setHealth(double health) {
+        this.health.setHealthPoints(health);
+    }
 
     public Enemy(String name, double health, Weapon weapon) {
-        super.setName(name);
-        this.health.setHealthPoints(health);
-        super.setWeapon(weapon);
+        super(name,weapon);
+        getHealth().setHealthPoints(health);
     }
 
     public Enemy(double health, Weapon weapon) {
-        super.setName(enemyDefaultName);
-        this.health.setHealthPoints(health);
-        super.setWeapon(weapon);
+        super(weapon);
+
     }
 
     public void attack(Player player) {

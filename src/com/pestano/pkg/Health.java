@@ -1,17 +1,24 @@
 package com.pestano.pkg;
 
 public abstract class Health {
-    public double getHealthPoints() {
-        return healthPoints;
-    }
+    protected double maxHealth;
+    protected double healthPoints;
 
     public void setHealthPoints(double healthPoints) {
         this.healthPoints = healthPoints;
     }
 
-    // Default
-    private double healthPoints = 2000;
+    private void setMaxHealth(double maxHealth) {
+        this.maxHealth = maxHealth;
+    }
 
+    public double getHealthPoints() {
+        return healthPoints;
+    }
+
+    public double getMaxHealth() {
+        return maxHealth;
+    }
 
     public void calculateHitPoints(double weaponDmg) {
         double totalHealth = getHealthPoints();
@@ -33,7 +40,17 @@ public abstract class Health {
         }
     }
 
+    public Health(double healthPoints) {
+        setMaxHealth(healthPoints);
+        setHealthPoints(healthPoints);
+    }
 
+    public Health() {
+        final double DEFAULT = 2000;
 
+        setMaxHealth(DEFAULT);
+        setHealthPoints(DEFAULT);
+
+    }
 }
 
