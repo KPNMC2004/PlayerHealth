@@ -24,12 +24,6 @@ public class PlayerHealth extends Health {
         this.setHealthPoints(totalHealth);
     }
 
-    // Health Regen
-    public void calculateRegeneration(int healthGained) {
-        this.setHealthPoints(healthGained);
-    }
-
-
     public PlayerHealth(double health) {
         super(health);
     }

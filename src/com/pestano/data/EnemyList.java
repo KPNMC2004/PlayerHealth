@@ -8,7 +8,7 @@ import java.util.HashMap;
 
 public class EnemyList {
     private static EnemyList singleInstance = null;
-    private ArrayList<Enemy> enemyTypes = new ArrayList<>();
+    private final ArrayList<Enemy> enemyTypes = new ArrayList<>();
 
     public ArrayList<Enemy> getEnemyTypes() {
         return enemyTypes;
