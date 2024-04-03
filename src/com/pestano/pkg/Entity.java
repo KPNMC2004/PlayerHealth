@@ -6,6 +6,7 @@ import com.pestano.pkg.entities.Enemy;
 public abstract class Entity {
     protected String name = "Joe";
     protected Weapon weapon = null;
+    public final int MELEE_DAMAGE = 10;
 
     public String getName() {
         return name;
@@ -29,7 +30,7 @@ public abstract class Entity {
     }
 
     public Entity(String name) {
-        WeaponList weaponList = new WeaponList();
+        WeaponList weaponList = WeaponList.WeaponList();
 
         final Weapon DEFAULT_WEAPON = weaponList.getWeaponsMap().get("Fist");
 

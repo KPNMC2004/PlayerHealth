@@ -5,24 +5,34 @@ import com.pestano.pkg.Health;
 public class EnemyHealth extends Health {
 
     // Constants
-    final double LIFE_COST = 0.02;
+    private final double LIFE_COST = 0.02;
 
 
     // When Hitted
-    public void calculateHitPoints(double weaponDmg, double spellDmg) {
-        double totalHealth = this.getHealthPoints();
+    public void calculateHitPoints(double weaponDmg) {
+        double totalHealth = getHealthPoints();
 
-        totalHealth = (weaponDmg + spellDmg + (this.LIFE_COST * totalHealth) ) - totalHealth;
+        totalHealth -= (weaponDmg + (this.LIFE_COST * totalHealth) );
 
-        super.setHealthPoints(totalHealth);
+
+        setHealthPoints(totalHealth);
     }
 
-    public void calculateHitPoints(double weaponDmg) {
+    public void calculateHitPoints(double meleeDmg, double weaponDmg) {
         double totalHealth = this.getHealthPoints();
 
-        totalHealth = (weaponDmg + (this.LIFE_COST * totalHealth) ) - totalHealth;
+        totalHealth -= (weaponDmg + meleeDmg + (this.LIFE_COST * totalHealth) );
 
-        this.setHealthPoints(totalHealth);
+        setHealthPoints(totalHealth);
+    }
+
+    public void calculateHitPoints(int spellDmg) {
+        double totalHealth = getHealthPoints();
+
+        totalHealth -= (spellDmg + (this.LIFE_COST * totalHealth) );
+
+
+        setHealthPoints(totalHealth);
     }
 
     public EnemyHealth(double health) {

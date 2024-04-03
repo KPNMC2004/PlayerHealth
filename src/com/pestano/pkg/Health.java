@@ -8,7 +8,7 @@ public abstract class Health {
         this.healthPoints = healthPoints;
     }
 
-    private void setMaxHealth(double maxHealth) {
+    private void setMaxHealthPoints(double maxHealth) {
         this.maxHealth = maxHealth;
     }
 
@@ -16,7 +16,7 @@ public abstract class Health {
         return healthPoints;
     }
 
-    public double getMaxHealth() {
+    public double getMaxHealthPoints() {
         return maxHealth;
     }
 
@@ -41,14 +41,14 @@ public abstract class Health {
     }
 
     public Health(double healthPoints) {
-        setMaxHealth(healthPoints);
+        setMaxHealthPoints(healthPoints);
         setHealthPoints(healthPoints);
     }
 
     public Health() {
         final double DEFAULT = 2000;
 
-        setMaxHealth(DEFAULT);
+        setMaxHealthPoints(DEFAULT);
         setHealthPoints(DEFAULT);
 
     }
