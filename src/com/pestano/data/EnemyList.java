@@ -18,10 +18,10 @@ public class EnemyList {
         WeaponList weaponList = WeaponList.WeaponList();
         HashMap<String, Weapon> weaponMap = weaponList.getWeaponsMap();
 
-        enemyTypes.add(new Enemy("Brute", 300, weaponMap.get("FIS")));
-        enemyTypes.add(new Enemy("Macero", 200, weaponMap.get("MAC")));
-        enemyTypes.add(new Enemy("Knight", 200, weaponMap.get("SWO")));
-        enemyTypes.add(new Enemy("Archer", 150, weaponMap.get("BOW")));
+        enemyTypes.add(new Enemy("Brute", 1900, weaponMap.get("FIS")));
+        enemyTypes.add(new Enemy("Macero", 2500, weaponMap.get("MAC")));
+        enemyTypes.add(new Enemy("Knight", 2000, weaponMap.get("SWO")));
+        enemyTypes.add(new Enemy("Archer", 1250, weaponMap.get("BOW")));
     }
 
     public static EnemyList EnemyList(){

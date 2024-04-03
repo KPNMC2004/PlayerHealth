@@ -14,7 +14,7 @@ public class Main {
     private static int turns = 1;
     public static void enumerateTurn() {
         turns++;
-    };
+    }
     public static Player classSelector(String name) {
         Scanner input = new Scanner(System.in);
 
@@ -122,8 +122,21 @@ public class Main {
         String choice;
 
 
+        // print logo
+        System.out.println("""
+                 
+                 ______  __ __   ____  ______       ___   ____     ___       ____   ____  ___ ___    ___\s
+                |      ||  |  | /    ||      |     /   \\ |    \\   /  _]     /    | /    ||   |   |  /  _]
+                |      ||  |  ||  o  ||      |    |     ||  _  | /  [_     |   __||  o  || _   _ | /  [_\s
+                |_|  |_||  _  ||     ||_|  |_|    |  O  ||  |  ||    _]    |  |  ||     ||  \\_/  ||    _]
+                  |  |  |  |  ||  _  |  |  |      |     ||  |  ||   [_     |  |_ ||  _  ||   |   ||   [_\s
+                  |  |  |  |  ||  |  |  |  |      |     ||  |  ||     |    |     ||  |  ||   |   ||     |
+                  |__|  |__|__||__|__|  |__|       \\___/ |__|__||_____|    |___,_||__|__||___|___||_____|
+                                                                                                        \s
+                """);
+
         // ask for player name
-        System.out.print("\n\nEnter you name >> ");
+        System.out.print("\nEnter you name >> ");
         playerName = input.nextLine();
 
         System.out.printf("Your name is : %s\n", playerName);
